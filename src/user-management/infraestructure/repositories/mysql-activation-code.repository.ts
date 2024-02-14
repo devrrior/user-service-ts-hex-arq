@@ -1,7 +1,8 @@
 import {ActivationCodeEntity} from "../../domain/entity/activation-code.entity";
 import {ActivationCodeAttributes, ActivationCodeModel} from "../mysql/models/activation-code.model";
+import {ActivationCodesRepository} from "../../domain/repository/activation-codes.repository";
 
-export class MysqlActivationCodeRepository {
+export class MysqlActivationCodeRepository implements ActivationCodesRepository {
 
     async save(activationCode: ActivationCodeEntity): Promise<ActivationCodeEntity> {
         const foundActivationCode = await ActivationCodeModel.findOne({where: {userId: activationCode.userId}});

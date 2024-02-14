@@ -5,10 +5,10 @@ export class ActivationCodeEntity implements ActivationCodeInterface {
     _code: string;
     _userId: string;
     _isUsed: boolean;
-    _usedAt: Date;
+    _usedAt: Date | null;
 
 
-    constructor(id: string, code: string, userId: string, isUsed: boolean, usedAt: Date) {
+    constructor(id: string, code: string, userId: string, isUsed: boolean, usedAt: Date | null) {
         this._id = id;
         this._code = code;
         this._userId = userId;
@@ -32,7 +32,7 @@ export class ActivationCodeEntity implements ActivationCodeInterface {
         return this._isUsed;
     }
 
-    get usedAt(): Date {
+    get usedAt(): Date | null {
         return this._usedAt;
     }
 

@@ -3,5 +3,5 @@ export interface ActivationCodeInterface {
     _code: string;
     _userId: string;
     _isUsed: boolean;
-    _usedAt: Date;
+    _usedAt: Date | null;
 }

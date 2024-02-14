@@ -5,7 +5,7 @@ export interface ActivationCodeAttributes {
     code: string;
     userId: string;
     isUsed: boolean;
-    usedAt: Date;
+    usedAt: Date | null
 }
 
 @Table({
