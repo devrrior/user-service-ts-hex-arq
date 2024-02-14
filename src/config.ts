@@ -18,5 +18,10 @@ export default {
             "password": process.env.MYSQL_DATABASE_PASSWORD as string ?? "",
             "port": +(process.env.MYSQL_DATABASE_PORT ?? "") as number,
         }
+    },
+    "keys": {
+        "jwt": {
+            "secret": process.env.JWT_ACCESS_SECRET_KEY as string ?? "",
+        }
     }
 }

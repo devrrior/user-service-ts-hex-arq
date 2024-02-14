@@ -12,3 +12,8 @@ router.post(
     "/activate/:activationCode",
     userController.activateUser.bind(userController)
 );
+
+router.post(
+    "/login",
+    userController.authenticateUser.bind(userController)
+);

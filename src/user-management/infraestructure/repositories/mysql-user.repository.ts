@@ -44,6 +44,16 @@ export class MysqlUserRepository implements UserRepository {
         return this.toEntity(foundUser.get());
     }
 
+    async findByEmail(email: string): Promise<UserEntity | null> {
+        const foundUser = await UserModel.findOne({where: {email}});
+
+        if (foundUser === null) {
+            return null;
+        }
+
+        return this.toEntity(foundUser.get());
+    }
+
     private toEntity(user: UserAttributes): UserEntity {
         return new UserEntity(
             user.id,
