@@ -5,9 +5,9 @@ export class RegisterUserResponseDto {
     private _cellphone: string;
     private _email: string;
     private _isActivated: boolean;
-    private _verifiedAt: Date;
+    private _verifiedAt: Date | null;
 
-    constructor(id: string, name: string, lastName: string, cellphone: string, email: string, isActivated: boolean, verifiedAt: Date) {
+    constructor(id: string, name: string, lastName: string, cellphone: string, email: string, isActivated: boolean, verifiedAt: Date | null) {
         this._id = id;
         this._name = name;
         this._lastName = lastName;
@@ -41,7 +41,7 @@ export class RegisterUserResponseDto {
         return this._isActivated;
     }
 
-    get verifiedAt(): Date {
+    get verifiedAt(): Date | null {
         return this._verifiedAt;
     }
 }

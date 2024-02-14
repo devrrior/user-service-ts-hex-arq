@@ -8,9 +8,9 @@ export class UserEntity implements UserInterface {
     _email: string;
     _password: string;
     _isActivated: boolean;
-    _verifiedAt: Date;
+    _verifiedAt: Date | null;
 
-    constructor(id: string, name: string, lastName: string, cellphone: string, email: string, password: string, isActivated: boolean, verifiedAt: Date) {
+    constructor(id: string, name: string, lastName: string, cellphone: string, email: string, password: string, isActivated: boolean, verifiedAt: Date | null) {
         this._id = id;
         this._firstName = name;
         this._lastName = lastName;
@@ -77,7 +77,7 @@ export class UserEntity implements UserInterface {
         this._isActivated = value;
     }
 
-    get verifiedAt(): Date {
+    get verifiedAt(): Date | null {
         return this._verifiedAt;
     }
 

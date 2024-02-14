@@ -10,7 +10,7 @@ export class GmailEmailSenderRepository implements EmailSenderRepository {
         this._transporter = nodemailer.createTransport({
             host: config.smtp.gmail.host,
             port: config.smtp.gmail.port,
-            secure: true,
+            secure: false,
             auth: {
                 user: config.smtp.gmail.user,
                 pass: config.smtp.gmail.password,

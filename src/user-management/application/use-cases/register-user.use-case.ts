@@ -29,11 +29,10 @@ export class RegisterUserUseCase {
             request.email,
             hashedPassword,
             false,
-            todayDate
+            null,
         );
 
         const entity = await this.userRepository.save(user);
-
         const createActivationCodeRequest = new CreateActivationCodeRequestDto(entity.id);
         const activationCode = await this.createActivationCodeUseCase.execute(createActivationCodeRequest);
 
@@ -41,7 +40,7 @@ export class RegisterUserUseCase {
             await this.emailSenderRepository.sendEmail(
                 entity.email,
                 'Welcome to our platform',
-                `Welcome to our platform, to activate your account please click on the following link: http://localhost:3000/activate-account/${entity.id}/${activationCode.code}`
+                `Welcome to our platform, to activate your account please click on the following link: http://localhost:3000/users/activate/${activationCode.code}`
             );
         }
 

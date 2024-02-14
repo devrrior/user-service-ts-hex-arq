@@ -9,7 +9,7 @@ export class ActivateUserUseCase {
 
     async execute(request: ActivateUserRequestDto): Promise<ActivateUserResponseDto | null> {
         const activationCode = await this.activationCodesRepository.findByCode(request.code);
-        if (!activationCode) {
+        if (!activationCode || activationCode._isUsed) {
             return null;
         }
 

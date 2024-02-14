@@ -6,5 +6,5 @@ export interface UserInterface {
     _email: string;
     _password: string
     _isActivated: boolean;
-    _verifiedAt: Date;
+    _verifiedAt: Date | null;
 }
