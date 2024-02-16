@@ -1,7 +1,7 @@
 import "./load-env-vars";
 import express from "express";
 import {router as userRouter} from "./user-management/infraestructure/rest-api/routes/user.router"
-import syncConnection from "./connection";
+import syncConnection from "./user-management/infraestructure/mysql/connection";
 
 const bootstrap = async () => {
     const app = express();

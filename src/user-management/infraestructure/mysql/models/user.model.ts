@@ -16,7 +16,7 @@ export interface UserAttributes {
     modelName: "User",
     timestamps: true,
 })
-export class UserModel extends Model implements UserAttributes{
+export class UserModel extends Model implements UserAttributes {
     @Column({
         primaryKey: true,
         type: DataType.STRING,
@@ -68,5 +68,3 @@ export class UserModel extends Model implements UserAttributes{
     })
     declare verifiedAt: Date;
 }
-
-export default UserModel;

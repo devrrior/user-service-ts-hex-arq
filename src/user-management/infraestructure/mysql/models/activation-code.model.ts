@@ -46,5 +46,3 @@ export class ActivationCodeModel extends Model implements ActivationCodeAttribut
     })
     declare usedAt: Date;
 }
-
-export default ActivationCodeModel;
